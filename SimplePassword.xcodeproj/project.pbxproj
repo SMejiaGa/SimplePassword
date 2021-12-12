@@ -13,6 +13,16 @@
 		971B58AF276651110015B8D4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B58AD276651110015B8D4 /* HomeViewController.xib */; };
 		971B58B2276651250015B8D4 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B58B0276651250015B8D4 /* CreateViewController.swift */; };
 		971B58B3276651250015B8D4 /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B58B1276651250015B8D4 /* CreateViewController.xib */; };
+		975E69C627665BA000C389EE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69C527665BA000C389EE /* HomeViewModel.swift */; };
+		975E69C827665DE800C389EE /* HomeTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69C727665DE800C389EE /* HomeTableViewAdapter.swift */; };
+		975E69D227665E5900C389EE /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69D027665E5900C389EE /* PasswordTableViewCell.swift */; };
+		975E69D327665E5900C389EE /* PasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975E69D127665E5900C389EE /* PasswordTableViewCell.xib */; };
+		975E69D527665E6E00C389EE /* PasswordCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69D427665E6E00C389EE /* PasswordCellViewModel.swift */; };
+		975E69D827666A9A00C389EE /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69D727666A9A00C389EE /* UIViewController+Extensions.swift */; };
+		975E69DB27666CF800C389EE /* SecureDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69DA27666CF800C389EE /* SecureDataStorage.swift */; };
+		975E69DD27666E2900C389EE /* AccountsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69DC27666E2900C389EE /* AccountsStorage.swift */; };
+		975E69DF27666E6500C389EE /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69DE27666E6500C389EE /* Account.swift */; };
+		975E69E4276697E300C389EE /* SimpleKeychain in Frameworks */ = {isa = PBXBuildFile; productRef = 975E69E3276697E300C389EE /* SimpleKeychain */; };
 		97734C7F27664F9800EA0892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97734C7E27664F9800EA0892 /* AppDelegate.swift */; };
 		97734C8827664F9A00EA0892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97734C8727664F9A00EA0892 /* Assets.xcassets */; };
 		97734C8B27664F9A00EA0892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97734C8927664F9A00EA0892 /* LaunchScreen.storyboard */; };
@@ -45,6 +55,17 @@
 		971B58AD276651110015B8D4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		971B58B0276651250015B8D4 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		971B58B1276651250015B8D4 /* CreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateViewController.xib; sourceTree = "<group>"; };
+		975E69C527665BA000C389EE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		975E69C727665DE800C389EE /* HomeTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewAdapter.swift; sourceTree = "<group>"; };
+		975E69D027665E5900C389EE /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordTableViewCell.swift; sourceTree = "<group>"; };
+		975E69D127665E5900C389EE /* PasswordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordTableViewCell.xib; sourceTree = "<group>"; };
+		975E69D427665E6E00C389EE /* PasswordCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCellViewModel.swift; sourceTree = "<group>"; };
+		975E69D727666A9A00C389EE /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		975E69DA27666CF800C389EE /* SecureDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataStorage.swift; sourceTree = "<group>"; };
+		975E69DC27666E2900C389EE /* AccountsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsStorage.swift; sourceTree = "<group>"; };
+		975E69DE27666E6500C389EE /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		975E69E027667B1400C389EE /* SimplePassword.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimplePassword.entitlements; sourceTree = "<group>"; };
+		975E69E127667B2A00C389EE /* SimplePasswordRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimplePasswordRelease.entitlements; sourceTree = "<group>"; };
 		97734C7B27664F9800EA0892 /* SimplePassword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplePassword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97734C7E27664F9800EA0892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97734C8727664F9A00EA0892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				975E69E4276697E300C389EE /* SimpleKeychain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +117,8 @@
 		971B58A3276650AF0015B8D4 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				975E69D927666CE400C389EE /* Security */,
+				975E69D627666A8D00C389EE /* Extensions */,
 				97734C8927664F9A00EA0892 /* LaunchScreen.storyboard */,
 				97734C8727664F9A00EA0892 /* Assets.xcassets */,
 				971B58A4276650B60015B8D4 /* Config */,
@@ -105,6 +129,8 @@
 		971B58A4276650B60015B8D4 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				975E69E127667B2A00C389EE /* SimplePasswordRelease.entitlements */,
+				975E69E027667B1400C389EE /* SimplePassword.entitlements */,
 				97734C7E27664F9800EA0892 /* AppDelegate.swift */,
 				97734C8C27664F9A00EA0892 /* Info.plist */,
 			);
@@ -123,8 +149,11 @@
 		971B58A6276650CA0015B8D4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				975E69CF27665E5900C389EE /* Cell */,
+				975E69C527665BA000C389EE /* HomeViewModel.swift */,
 				971B58AC276651110015B8D4 /* HomeViewController.swift */,
 				971B58AD276651110015B8D4 /* HomeViewController.xib */,
+				975E69C727665DE800C389EE /* HomeTableViewAdapter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -136,6 +165,34 @@
 				971B58B1276651250015B8D4 /* CreateViewController.xib */,
 			);
 			path = Create;
+			sourceTree = "<group>";
+		};
+		975E69CF27665E5900C389EE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				975E69D027665E5900C389EE /* PasswordTableViewCell.swift */,
+				975E69D127665E5900C389EE /* PasswordTableViewCell.xib */,
+				975E69D427665E6E00C389EE /* PasswordCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		975E69D627666A8D00C389EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				975E69D727666A9A00C389EE /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		975E69D927666CE400C389EE /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				975E69DA27666CF800C389EE /* SecureDataStorage.swift */,
+				975E69DC27666E2900C389EE /* AccountsStorage.swift */,
+				975E69DE27666E6500C389EE /* Account.swift */,
+			);
+			path = Security;
 			sourceTree = "<group>";
 		};
 		97734C7227664F9800EA0892 = {
@@ -192,6 +249,9 @@
 			dependencies = (
 			);
 			name = SimplePassword;
+			packageProductDependencies = (
+				975E69E3276697E300C389EE /* SimpleKeychain */,
+			);
 			productName = SimplePassword;
 			productReference = 97734C7B27664F9800EA0892 /* SimplePassword.app */;
 			productType = "com.apple.product-type.application";
@@ -264,6 +324,9 @@
 				Base,
 			);
 			mainGroup = 97734C7227664F9800EA0892;
+			packageReferences = (
+				975E69E2276697E300C389EE /* XCRemoteSwiftPackageReference "SimpleKeychain" */,
+			);
 			productRefGroup = 97734C7C27664F9800EA0892 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -282,6 +345,7 @@
 			files = (
 				97734C8B27664F9A00EA0892 /* LaunchScreen.storyboard in Resources */,
 				971B58B3276651250015B8D4 /* CreateViewController.xib in Resources */,
+				975E69D327665E5900C389EE /* PasswordTableViewCell.xib in Resources */,
 				97734C8827664F9A00EA0892 /* Assets.xcassets in Resources */,
 				971B58AB276650F10015B8D4 /* LoginViewController.xib in Resources */,
 				971B58AF276651110015B8D4 /* HomeViewController.xib in Resources */,
@@ -311,7 +375,15 @@
 			files = (
 				971B58B2276651250015B8D4 /* CreateViewController.swift in Sources */,
 				971B58AA276650F10015B8D4 /* LoginViewController.swift in Sources */,
+				975E69D227665E5900C389EE /* PasswordTableViewCell.swift in Sources */,
+				975E69C827665DE800C389EE /* HomeTableViewAdapter.swift in Sources */,
+				975E69D827666A9A00C389EE /* UIViewController+Extensions.swift in Sources */,
+				975E69DF27666E6500C389EE /* Account.swift in Sources */,
+				975E69DD27666E2900C389EE /* AccountsStorage.swift in Sources */,
 				97734C7F27664F9800EA0892 /* AppDelegate.swift in Sources */,
+				975E69D527665E6E00C389EE /* PasswordCellViewModel.swift in Sources */,
+				975E69DB27666CF800C389EE /* SecureDataStorage.swift in Sources */,
+				975E69C627665BA000C389EE /* HomeViewModel.swift in Sources */,
 				971B58AE276651110015B8D4 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +553,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Commons/Config/SimplePassword.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -512,6 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Commons/Config/SimplePasswordRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -670,6 +744,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		975E69E2276697E300C389EE /* XCRemoteSwiftPackageReference "SimpleKeychain" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/SimpleKeychain.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		975E69E3276697E300C389EE /* SimpleKeychain */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 975E69E2276697E300C389EE /* XCRemoteSwiftPackageReference "SimpleKeychain" */;
+			productName = SimpleKeychain;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 97734C7327664F9800EA0892 /* Project object */;
 }
