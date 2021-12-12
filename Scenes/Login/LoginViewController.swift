@@ -1,12 +1,6 @@
 import UIKit
 import LocalAuthentication
 
-enum BiometricType {
-    case none
-    case touch
-    case face
-}
-
 final class LoginViewController: UIViewController {
     
     // MARK: -IBoutlets
@@ -17,15 +11,21 @@ final class LoginViewController: UIViewController {
     
     // MARK: -Properties
     private let authContext = LAContext()
-    private let localizedText = " continúa con %@ ID"
+    private let viewModel: LoginViewModel
+    private let errorMessage = "Intentalo nuevamente"
     
     // MARK: -IBActions
     @IBAction func continueButtonAction() {
         loaderActivityIndicator.startAnimating()
-        askPermissions()
+        biometrics.askPermissions { bioResults in
+            if bioResults {
+                
+            }
+        }
     }
     // MARK: -Class LifeCycle
-    init() {
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
@@ -37,53 +37,51 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        askPermissions()
-    }
-    
-    // MARK: -Private functions
-    private func biometricType() -> BiometricType {
-        if #available(iOS 11, *) {
-            let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-            switch authContext.biometryType {
-            case .none:
-                return .none
-            case .touchID:
-                return .touch
-            case .faceID:
-                return .face
-            @unknown default:
-                fatalError()
+        
+        biometrics.askPermissions { [weak self] bioResults in
+            
+            guard let self = self else {
+                return
             }
-        } else {
-            return authContext.canEvaluatePolicy(
-                .deviceOwnerAuthenticationWithBiometrics,
-                error: nil
-            ) ? .touch : .none
+            if bioResults {
+                self.sendToHome()
+            } else {
+                self.alert(message: self.errorMessage)
+            }
         }
     }
     
+    // MARK: -Private functions    
     private func setupView() {
         checkAuthView.isHidden = true
     }
     
-    private func askPermissions() {
-        
-        let formatedText = String(format: localizedText, "\(biometricType())")
-        let homeViewController = HomeViewController()
-        let reason = formatedText
-        authContext.evaluatePolicy(
-            .deviceOwnerAuthentication,
-            localizedReason: reason
-        ) { [weak self] success, error in
-            guard let self = self  else { return }
-            DispatchQueue.main.async {
-                if let error = error {
-                    self.errorlabel.text = error.localizedDescription
-                    self.loaderActivityIndicator.stopAnimating()
-                } else {
-                    self.present(homeViewController, animated: true, completion: nil)
-                }
+    private func biometricsState() {
+        biometrics.askPermissions { bioResult in
+            if bioResult {
+                self.sendToHome()
+            } else {
+                self.errorlabel.text = self.errorMessage
+                self.loaderActivityIndicator.stopAnimating()
             }
+        }
+        
+    }
+    
+    private func subscribeToViewModel() {
+        viewModel.stateDidChange = { [weak self] status in
+            switch status {
+            case .asking:
+                self?.handleBiometrics()
+            case .loading:
+                return
+            }
+        }
+    }
+    
+    private func sendToHome() {
+        DispatchQueue.main.async {
+            self.present(HomeViewController.instance, animated: true, completion: nil)
         }
     }
 }
