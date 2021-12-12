@@ -1,22 +1,84 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="SimplePassword" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="checkAuthView" destination="Qd0-Mm-ki3" id="ad4-KK-ErP"/>
+                <outlet property="continueButton" destination="Yn8-ar-0Mf" id="dPo-Kf-w2H"/>
+                <outlet property="loaderActivityIndicator" destination="pC8-Se-zeq" id="IKK-D6-wue"/>
+                <outlet property="view" destination="NW0-12-Pp1" id="THP-bw-jc2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view contentMode="scaleToFill" id="NW0-12-Pp1">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qd0-Mm-ki3">
+                    <rect key="frame" x="25" y="190" width="325" height="319"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pC8-Se-zeq">
+                            <rect key="frame" x="152.5" y="149.5" width="20" height="20"/>
+                        </activityIndicatorView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="ffa-qu-FRf">
+                            <rect key="frame" x="5" y="50" width="315" height="219"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configura tu ID personal para ingresar a SimplePassword" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UF-lC-FJ9">
+                                    <rect key="frame" x="0.0" y="0.0" width="315" height="89"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn8-ar-0Mf">
+                                    <rect key="frame" x="0.0" y="179" width="315" height="40"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="GRl-Bv-R7W"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Intentar nuevamente"/>
+                                    <connections>
+                                        <action selector="continueButton" destination="-1" eventType="touchUpInside" id="PNK-aR-h1o"/>
+                                        <action selector="continueButtonAction" destination="-1" eventType="touchUpInside" id="eyJ-oy-Yo3"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="pC8-Se-zeq" firstAttribute="centerY" secondItem="Qd0-Mm-ki3" secondAttribute="centerY" id="1qL-xV-nkA"/>
+                        <constraint firstItem="ffa-qu-FRf" firstAttribute="leading" secondItem="Qd0-Mm-ki3" secondAttribute="leading" constant="5" id="FAn-kM-S28"/>
+                        <constraint firstAttribute="trailing" secondItem="ffa-qu-FRf" secondAttribute="trailing" constant="5" id="LyS-CR-6Uy"/>
+                        <constraint firstAttribute="bottom" secondItem="ffa-qu-FRf" secondAttribute="bottom" constant="50" id="Uh7-cv-det"/>
+                        <constraint firstItem="pC8-Se-zeq" firstAttribute="centerX" secondItem="Qd0-Mm-ki3" secondAttribute="centerX" id="ZxT-NX-mo5"/>
+                        <constraint firstItem="ffa-qu-FRf" firstAttribute="top" secondItem="Qd0-Mm-ki3" secondAttribute="top" constant="50" id="q05-fr-mbm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="h5Y-aF-U9G"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Qd0-Mm-ki3" firstAttribute="leading" secondItem="h5Y-aF-U9G" secondAttribute="leading" constant="25" id="3zL-8w-4lf"/>
+                <constraint firstItem="h5Y-aF-U9G" firstAttribute="bottom" secondItem="Qd0-Mm-ki3" secondAttribute="bottom" constant="158" id="exV-N1-Qp9"/>
+                <constraint firstItem="Qd0-Mm-ki3" firstAttribute="top" secondItem="h5Y-aF-U9G" secondAttribute="top" constant="190" id="lTu-tv-s8b"/>
+                <constraint firstItem="h5Y-aF-U9G" firstAttribute="trailing" secondItem="Qd0-Mm-ki3" secondAttribute="trailing" constant="25" id="qVc-9F-aYH"/>
+            </constraints>
+            <point key="canvasLocation" x="76" y="51.724137931034484"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -6,5 +6,7 @@
 	<array>
 		<string>processing</string>
 	</array>
+	<key>NSFaceIDUsageDescription</key>
+	<string>SimplePassword auth</string>
 </dict>
 </plist>
