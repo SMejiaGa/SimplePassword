@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		971B58AA276650F10015B8D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B58A8276650F10015B8D4 /* LoginViewController.swift */; };
+		971B58AB276650F10015B8D4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B58A9276650F10015B8D4 /* LoginViewController.xib */; };
+		971B58AE276651110015B8D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B58AC276651110015B8D4 /* HomeViewController.swift */; };
+		971B58AF276651110015B8D4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B58AD276651110015B8D4 /* HomeViewController.xib */; };
+		971B58B2276651250015B8D4 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B58B0276651250015B8D4 /* CreateViewController.swift */; };
+		971B58B3276651250015B8D4 /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B58B1276651250015B8D4 /* CreateViewController.xib */; };
 		97734C7F27664F9800EA0892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97734C7E27664F9800EA0892 /* AppDelegate.swift */; };
-		97734C8127664F9800EA0892 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97734C8027664F9800EA0892 /* SceneDelegate.swift */; };
-		97734C8327664F9800EA0892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97734C8227664F9800EA0892 /* ViewController.swift */; };
-		97734C8627664F9800EA0892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97734C8427664F9800EA0892 /* Main.storyboard */; };
 		97734C8827664F9A00EA0892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97734C8727664F9A00EA0892 /* Assets.xcassets */; };
 		97734C8B27664F9A00EA0892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97734C8927664F9A00EA0892 /* LaunchScreen.storyboard */; };
 		97734C9627664F9A00EA0892 /* SimplePasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97734C9527664F9A00EA0892 /* SimplePasswordTests.swift */; };
@@ -36,11 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		971B58A8276650F10015B8D4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		971B58A9276650F10015B8D4 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		971B58AC276651110015B8D4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		971B58AD276651110015B8D4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		971B58B0276651250015B8D4 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		971B58B1276651250015B8D4 /* CreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateViewController.xib; sourceTree = "<group>"; };
 		97734C7B27664F9800EA0892 /* SimplePassword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplePassword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97734C7E27664F9800EA0892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		97734C8027664F9800EA0892 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		97734C8227664F9800EA0892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		97734C8527664F9800EA0892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97734C8727664F9A00EA0892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97734C8A27664F9A00EA0892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97734C8C27664F9A00EA0892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,10 +82,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		971B58A2276650AB0015B8D4 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				971B58A7276650CE0015B8D4 /* Create */,
+				971B58A6276650CA0015B8D4 /* Home */,
+				971B58A5276650C60015B8D4 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		971B58A3276650AF0015B8D4 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				97734C8927664F9A00EA0892 /* LaunchScreen.storyboard */,
+				97734C8727664F9A00EA0892 /* Assets.xcassets */,
+				971B58A4276650B60015B8D4 /* Config */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		971B58A4276650B60015B8D4 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				97734C7E27664F9800EA0892 /* AppDelegate.swift */,
+				97734C8C27664F9A00EA0892 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		971B58A5276650C60015B8D4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				971B58A8276650F10015B8D4 /* LoginViewController.swift */,
+				971B58A9276650F10015B8D4 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		971B58A6276650CA0015B8D4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				971B58AC276651110015B8D4 /* HomeViewController.swift */,
+				971B58AD276651110015B8D4 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		971B58A7276650CE0015B8D4 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				971B58B0276651250015B8D4 /* CreateViewController.swift */,
+				971B58B1276651250015B8D4 /* CreateViewController.xib */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
 		97734C7227664F9800EA0892 = {
 			isa = PBXGroup;
 			children = (
-				97734C7D27664F9800EA0892 /* SimplePassword */,
+				971B58A3276650AF0015B8D4 /* Commons */,
+				971B58A2276650AB0015B8D4 /* Scenes */,
 				97734C9427664F9A00EA0892 /* SimplePasswordTests */,
 				97734C9E27664F9A00EA0892 /* SimplePasswordUITests */,
 				97734C7C27664F9800EA0892 /* Products */,
@@ -94,20 +157,6 @@
 				97734C9B27664F9A00EA0892 /* SimplePasswordUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		97734C7D27664F9800EA0892 /* SimplePassword */ = {
-			isa = PBXGroup;
-			children = (
-				97734C7E27664F9800EA0892 /* AppDelegate.swift */,
-				97734C8027664F9800EA0892 /* SceneDelegate.swift */,
-				97734C8227664F9800EA0892 /* ViewController.swift */,
-				97734C8427664F9800EA0892 /* Main.storyboard */,
-				97734C8727664F9A00EA0892 /* Assets.xcassets */,
-				97734C8927664F9A00EA0892 /* LaunchScreen.storyboard */,
-				97734C8C27664F9A00EA0892 /* Info.plist */,
-			);
-			path = SimplePassword;
 			sourceTree = "<group>";
 		};
 		97734C9427664F9A00EA0892 /* SimplePasswordTests */ = {
@@ -232,8 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				97734C8B27664F9A00EA0892 /* LaunchScreen.storyboard in Resources */,
+				971B58B3276651250015B8D4 /* CreateViewController.xib in Resources */,
 				97734C8827664F9A00EA0892 /* Assets.xcassets in Resources */,
-				97734C8627664F9800EA0892 /* Main.storyboard in Resources */,
+				971B58AB276650F10015B8D4 /* LoginViewController.xib in Resources */,
+				971B58AF276651110015B8D4 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97734C8327664F9800EA0892 /* ViewController.swift in Sources */,
+				971B58B2276651250015B8D4 /* CreateViewController.swift in Sources */,
+				971B58AA276650F10015B8D4 /* LoginViewController.swift in Sources */,
 				97734C7F27664F9800EA0892 /* AppDelegate.swift in Sources */,
-				97734C8127664F9800EA0892 /* SceneDelegate.swift in Sources */,
+				971B58AE276651110015B8D4 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +349,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		97734C8427664F9800EA0892 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				97734C8527664F9800EA0892 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		97734C8927664F9A00EA0892 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -440,17 +484,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SimplePassword/Info.plist;
+				INFOPLIST_FILE = Commons/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mejiagarcia.SimplePassword;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -467,17 +512,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SimplePassword/Info.plist;
+				INFOPLIST_FILE = Commons/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mejiagarcia.SimplePassword;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
