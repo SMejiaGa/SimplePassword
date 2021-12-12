@@ -1,7 +1,7 @@
 import UIKit
 
 enum PasswordCellAction {
-    case showPassword
+    case delete
 }
 
 protocol PasswordTableViewCellDelegate: AnyObject {

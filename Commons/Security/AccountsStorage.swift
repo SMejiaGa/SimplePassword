@@ -5,6 +5,7 @@ typealias ErrorBlock = (_ error: Error?) -> Void
 protocol AccountsStorageProtocol {
     func save(account: Account, onCompletion: ErrorBlock)
     func get() -> [Account]
+    func delete(accountProvider: String)
 }
 
 final class AccountsStorage: AccountsStorageProtocol {
@@ -31,12 +32,17 @@ final class AccountsStorage: AccountsStorageProtocol {
         }
     }
     
+    func delete(accountProvider: String) {
+        let updatedStorage = get().filter { $0.provider != accountProvider }
+        try? storage.save(updatedStorage, key: accountsKey)
+    }
+    
     func get() -> [Account] {
         do {
             return try storage.read(
                 key: accountsKey,
                 type: [Account].self
-            ) ?? []
+            )?.reversed() ?? []
         } catch let error {
             print(error)
             return []

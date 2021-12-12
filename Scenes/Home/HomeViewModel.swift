@@ -12,6 +12,7 @@ enum HomeViewModelState {
     case error(error: Error)
     case noContent
     case modelUpdated(indexPath: IndexPath)
+    case modelDeleted(indexPath: IndexPath)
 }
 
 final class HomeViewModel: HomeDataSourceProtocol {
@@ -45,7 +46,14 @@ final class HomeViewModel: HomeDataSourceProtocol {
     }
     
     func deletePassword(at indexPath: IndexPath) {
+        storage.delete(
+            accountProvider: dataSource[indexPath.row].presentation.provider
+        )
         
+        dataSource.remove(at: indexPath.row)
+        status = .modelDeleted(indexPath: indexPath)
+        
+        validateEmptyState()
     }
     
     func fetchData() {
@@ -73,6 +81,12 @@ final class HomeViewModel: HomeDataSourceProtocol {
     private func mainThread(_ execute: @escaping () -> Void) {
         DispatchQueue.main.async {
             execute()
+        }
+    }
+    
+    private func validateEmptyState() {
+        if dataSource.isEmpty {
+            status = .noContent
         }
     }
 }

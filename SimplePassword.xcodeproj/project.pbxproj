@@ -13,6 +13,7 @@
 		971B58AF276651110015B8D4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B58AD276651110015B8D4 /* HomeViewController.xib */; };
 		971B58B2276651250015B8D4 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B58B0276651250015B8D4 /* CreateViewController.swift */; };
 		971B58B3276651250015B8D4 /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B58B1276651250015B8D4 /* CreateViewController.xib */; };
+		9748321D2766BCF90026910E /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9748321C2766BCF90026910E /* CreateViewModel.swift */; };
 		975E69C627665BA000C389EE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69C527665BA000C389EE /* HomeViewModel.swift */; };
 		975E69C827665DE800C389EE /* HomeTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69C727665DE800C389EE /* HomeTableViewAdapter.swift */; };
 		975E69D227665E5900C389EE /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E69D027665E5900C389EE /* PasswordTableViewCell.swift */; };
@@ -55,6 +56,7 @@
 		971B58AD276651110015B8D4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		971B58B0276651250015B8D4 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		971B58B1276651250015B8D4 /* CreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateViewController.xib; sourceTree = "<group>"; };
+		9748321C2766BCF90026910E /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		975E69C527665BA000C389EE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		975E69C727665DE800C389EE /* HomeTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewAdapter.swift; sourceTree = "<group>"; };
 		975E69D027665E5900C389EE /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				971B58B0276651250015B8D4 /* CreateViewController.swift */,
 				971B58B1276651250015B8D4 /* CreateViewController.xib */,
+				9748321C2766BCF90026910E /* CreateViewModel.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				971B58AA276650F10015B8D4 /* LoginViewController.swift in Sources */,
 				975E69D227665E5900C389EE /* PasswordTableViewCell.swift in Sources */,
 				975E69C827665DE800C389EE /* HomeTableViewAdapter.swift in Sources */,
+				9748321D2766BCF90026910E /* CreateViewModel.swift in Sources */,
 				975E69D827666A9A00C389EE /* UIViewController+Extensions.swift in Sources */,
 				975E69DF27666E6500C389EE /* Account.swift in Sources */,
 				975E69DD27666E2900C389EE /* AccountsStorage.swift in Sources */,

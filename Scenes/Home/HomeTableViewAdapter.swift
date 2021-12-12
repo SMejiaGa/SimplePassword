@@ -75,16 +75,18 @@ extension HomeTableViewAdapter: UITableViewDataSource {
 extension HomeTableViewAdapter: UITableViewDelegate {
     func tableView(
         _ tableView: UITableView,
-        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+        leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath
     ) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(
-            style: .normal,
-            title: .show
-        ) { [weak self] _, _, _ in
+            style: .destructive,
+            title: .delete
+        ) { [weak self] _, _, block in
             self?.cellDelegate?.cellSwiped(
                 at: indexPath,
-                action: .showPassword
+                action: .delete
             )
+            
+            block(false)
         }
                 
         return UISwipeActionsConfiguration(actions: [action])
@@ -93,5 +95,4 @@ extension HomeTableViewAdapter: UITableViewDelegate {
 
 private extension String {
     static let delete = "Eliminar"
-    static let show = "Ver"
 }
