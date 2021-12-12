@@ -9,18 +9,22 @@ enum BiometricType {
 
 final class LoginViewController: UIViewController {
     
-    let authContext = LAContext()
-    let averageRadius: CGFloat = 10
-    
+    // MARK: -IBoutlets
     @IBOutlet private weak var checkAuthView: UIView!
-    @IBOutlet weak var loaderActivityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet private weak var loaderActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var errorlabel: UILabel!
+    @IBOutlet private weak var continueButton: UIButton!
     
+    // MARK: -Properties
+    private let authContext = LAContext()
+    private let localizedText = " continúa con %@ ID"
+    
+    // MARK: -IBActions
     @IBAction func continueButtonAction() {
-        self.loaderActivityIndicator.startAnimating()
+        loaderActivityIndicator.startAnimating()
         askPermissions()
     }
-        
+    // MARK: -Class LifeCycle
     init() {
         super.init(nibName: String(describing: Self.self), bundle: .main)
     }
@@ -29,16 +33,18 @@ final class LoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: -ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         askPermissions()
     }
     
+    // MARK: -Private functions
     private func biometricType() -> BiometricType {
         if #available(iOS 11, *) {
             let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-            switch(authContext.biometryType) {
+            switch authContext.biometryType {
             case .none:
                 return .none
             case .touchID:
@@ -51,41 +57,33 @@ final class LoginViewController: UIViewController {
         } else {
             return authContext.canEvaluatePolicy(
                 .deviceOwnerAuthenticationWithBiometrics,
-                error: nil) ? .touch : .none
+                error: nil
+            ) ? .touch : .none
         }
     }
     
     private func setupView() {
         checkAuthView.isHidden = true
-        checkAuthView.layer.cornerRadius = averageRadius
-        continueButton.layer.cornerRadius = averageRadius
     }
     
     private func askPermissions() {
+        
+        let formatedText = String(format: localizedText, "\(biometricType())")
         let homeViewController = HomeViewController()
-        let reason = "Log in with \(biometricType()) ID"
-            authContext.evaluatePolicy(
-                .deviceOwnerAuthentication,
-                localizedReason: reason
-            ) { success, error in
-                if success {
-                    self.present(homeViewController, animated: true, completion: nil)
+        let reason = formatedText
+        authContext.evaluatePolicy(
+            .deviceOwnerAuthentication,
+            localizedReason: reason
+        ) { [weak self] success, error in
+            guard let self = self  else { return }
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.errorlabel.text = error.localizedDescription
+                    self.loaderActivityIndicator.stopAnimating()
                 } else {
-                    DispatchQueue.main.async {
-                        self.animateView()
-                        self.loaderActivityIndicator.stopAnimating()
-                    }
+                    self.present(homeViewController, animated: true, completion: nil)
                 }
             }
-    }
-    
-    private func animateView() {
-        UIView.transition(
-            with: checkAuthView,
-            duration: 0.4,
-            options: .transitionCrossDissolve,
-            animations: {
-                self.checkAuthView.isHidden = false
-        })
+        }
     }
 }

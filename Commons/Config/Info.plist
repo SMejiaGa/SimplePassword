@@ -7,6 +7,6 @@
 		<string>processing</string>
 	</array>
 	<key>NSFaceIDUsageDescription</key>
-	<string>SimplePassword auth</string>
+	<string>SimplePassword usa reconocimiento facial para dar acceso a tus contraseñas</string>
 </dict>
 </plist>

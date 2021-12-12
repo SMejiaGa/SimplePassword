@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="checkAuthView" destination="Qd0-Mm-ki3" id="ad4-KK-ErP"/>
                 <outlet property="continueButton" destination="Yn8-ar-0Mf" id="dPo-Kf-w2H"/>
+                <outlet property="errorlabel" destination="6UF-lC-FJ9" id="Pnv-tA-8ag"/>
                 <outlet property="loaderActivityIndicator" destination="pC8-Se-zeq" id="IKK-D6-wue"/>
                 <outlet property="view" destination="NW0-12-Pp1" id="THP-bw-jc2"/>
             </connections>
@@ -22,63 +23,61 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pC8-Se-zeq">
+                    <rect key="frame" x="177.5" y="390.5" width="20" height="20"/>
+                </activityIndicatorView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qd0-Mm-ki3">
-                    <rect key="frame" x="25" y="190" width="325" height="319"/>
+                    <rect key="frame" x="25" y="297" width="325" height="73.5"/>
                     <subviews>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pC8-Se-zeq">
-                            <rect key="frame" x="152.5" y="149.5" width="20" height="20"/>
-                        </activityIndicatorView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="ffa-qu-FRf">
-                            <rect key="frame" x="5" y="50" width="315" height="219"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ffa-qu-FRf">
+                            <rect key="frame" x="0.0" y="0.0" width="325" height="73.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configura tu ID personal para ingresar a SimplePassword" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UF-lC-FJ9">
-                                    <rect key="frame" x="0.0" y="0.0" width="315" height="89"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UF-lC-FJ9">
+                                    <rect key="frame" x="0.0" y="0.0" width="325" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn8-ar-0Mf">
-                                    <rect key="frame" x="0.0" y="179" width="315" height="40"/>
-                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="GRl-Bv-R7W"/>
-                                    </constraints>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="0.0" y="40.5" width="325" height="33"/>
+                                    <color key="backgroundColor" systemColor="linkColor"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="Intentar nuevamente"/>
+                                    <state key="normal" title="Intentar nuevamente">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
                                     <connections>
-                                        <action selector="continueButton" destination="-1" eventType="touchUpInside" id="PNK-aR-h1o"/>
                                         <action selector="continueButtonAction" destination="-1" eventType="touchUpInside" id="eyJ-oy-Yo3"/>
                                     </connections>
                                 </button>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="pC8-Se-zeq" firstAttribute="centerY" secondItem="Qd0-Mm-ki3" secondAttribute="centerY" id="1qL-xV-nkA"/>
-                        <constraint firstItem="ffa-qu-FRf" firstAttribute="leading" secondItem="Qd0-Mm-ki3" secondAttribute="leading" constant="5" id="FAn-kM-S28"/>
-                        <constraint firstAttribute="trailing" secondItem="ffa-qu-FRf" secondAttribute="trailing" constant="5" id="LyS-CR-6Uy"/>
-                        <constraint firstAttribute="bottom" secondItem="ffa-qu-FRf" secondAttribute="bottom" constant="50" id="Uh7-cv-det"/>
-                        <constraint firstItem="pC8-Se-zeq" firstAttribute="centerX" secondItem="Qd0-Mm-ki3" secondAttribute="centerX" id="ZxT-NX-mo5"/>
-                        <constraint firstItem="ffa-qu-FRf" firstAttribute="top" secondItem="Qd0-Mm-ki3" secondAttribute="top" constant="50" id="q05-fr-mbm"/>
+                        <constraint firstItem="ffa-qu-FRf" firstAttribute="leading" secondItem="Qd0-Mm-ki3" secondAttribute="leading" id="FlN-Uz-hO1"/>
+                        <constraint firstAttribute="bottom" secondItem="ffa-qu-FRf" secondAttribute="bottom" id="Udo-hm-f0h"/>
+                        <constraint firstItem="ffa-qu-FRf" firstAttribute="top" secondItem="Qd0-Mm-ki3" secondAttribute="top" id="VT6-1m-euu"/>
+                        <constraint firstAttribute="trailing" secondItem="ffa-qu-FRf" secondAttribute="trailing" id="kZm-9a-1Ls"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="h5Y-aF-U9G"/>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Qd0-Mm-ki3" firstAttribute="leading" secondItem="h5Y-aF-U9G" secondAttribute="leading" constant="25" id="3zL-8w-4lf"/>
-                <constraint firstItem="h5Y-aF-U9G" firstAttribute="bottom" secondItem="Qd0-Mm-ki3" secondAttribute="bottom" constant="158" id="exV-N1-Qp9"/>
-                <constraint firstItem="Qd0-Mm-ki3" firstAttribute="top" secondItem="h5Y-aF-U9G" secondAttribute="top" constant="190" id="lTu-tv-s8b"/>
-                <constraint firstItem="h5Y-aF-U9G" firstAttribute="trailing" secondItem="Qd0-Mm-ki3" secondAttribute="trailing" constant="25" id="qVc-9F-aYH"/>
+                <constraint firstItem="pC8-Se-zeq" firstAttribute="top" secondItem="Qd0-Mm-ki3" secondAttribute="bottom" constant="20" id="5Td-Q6-TGU"/>
+                <constraint firstItem="Qd0-Mm-ki3" firstAttribute="leading" secondItem="h5Y-aF-U9G" secondAttribute="leading" constant="25" id="aey-8T-nyC"/>
+                <constraint firstItem="pC8-Se-zeq" firstAttribute="centerX" secondItem="NW0-12-Pp1" secondAttribute="centerX" id="fwc-yv-4RM"/>
+                <constraint firstItem="h5Y-aF-U9G" firstAttribute="trailing" secondItem="Qd0-Mm-ki3" secondAttribute="trailing" constant="25" id="kNq-gz-MvM"/>
+                <constraint firstItem="Qd0-Mm-ki3" firstAttribute="centerY" secondItem="NW0-12-Pp1" secondAttribute="centerY" id="szf-dm-eBK"/>
             </constraints>
             <point key="canvasLocation" x="76" y="51.724137931034484"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
