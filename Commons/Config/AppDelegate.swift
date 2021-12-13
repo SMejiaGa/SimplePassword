@@ -7,9 +7,7 @@ import UIKit
     // MARK: - Private Methods
     private func setupNavigator() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(
-            rootViewController: LoginViewController(viewModel: LoginViewModel())
-        )
+        window?.rootViewController = LoginViewController(viewModel: LoginViewModel())
         window?.makeKeyAndVisible()
     }
 }

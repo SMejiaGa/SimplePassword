@@ -1,9 +1,9 @@
 import Foundation
 
 enum LoginViewModelState {
-    case asking
+    case idle
     case loading
-    case enterHome
+    case authenticationSuccesful // REVISAR
     case error(error: Error)
 }
 
@@ -15,7 +15,7 @@ final class LoginViewModel {
     var stateDidChange: ((LoginViewModelState) -> Void)?
     private let biometrics = BiometricsHandler()
     
-    private var status: LoginViewModelState = .loading {
+    private var status: LoginViewModelState = .idle {
         didSet {
             DispatchQueue.main.async {
                 self.stateDidChange?(self.status)
@@ -23,20 +23,17 @@ final class LoginViewModel {
         }
     }
     
-    private func handleBiometrics() {
+    func requestBiometrics() {
+        status = .loading
+        // weak self
         biometrics.askPermissions { bioResult in
             if bioResult {
-                self.status = .enterHome
+                self.status = .authenticationSuccesful
             } else {
                 self.status = .error(
                     error: LoginViewModelError.biometricsDidFail
                 )
             }
         }
-        
-    }
-    
-    private func doWithBio() {
-        status = .asking
     }
 }
