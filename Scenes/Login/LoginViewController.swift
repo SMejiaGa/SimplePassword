@@ -8,6 +8,7 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Properties
     private let viewModel: LoginViewModel
+    private let notifications = LocalNotifications()
     
     // MARK: - IBActions
     @IBAction private func continueButtonAction() {
@@ -27,7 +28,7 @@ final class LoginViewController: UIViewController {
     // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        notifications.requestNotificationAuthorization()
         setupView()
         subscribeToViewModel()
         viewModel.requestBiometrics()

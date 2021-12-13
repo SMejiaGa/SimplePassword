@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B05397D2767BB3A00C364F6 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05397C2767BB3A00C364F6 /* LocalNotifications.swift */; };
 		0B914B3F2766C49F00B41565 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B914B3E2766C49F00B41565 /* LoginViewModel.swift */; };
 		0B914B412766C4E500B41565 /* BiometricsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B914B402766C4E500B41565 /* BiometricsHandler.swift */; };
 		971B58AA276650F10015B8D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B58A8276650F10015B8D4 /* LoginViewController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B05397C2767BB3A00C364F6 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		0B914B3E2766C49F00B41565 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0B914B402766C4E500B41565 /* BiometricsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricsHandler.swift; sourceTree = "<group>"; };
 		971B58A8276650F10015B8D4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				975E69DA27666CF800C389EE /* SecureDataStorage.swift */,
 				975E69DC27666E2900C389EE /* AccountsStorage.swift */,
 				975E69DE27666E6500C389EE /* Account.swift */,
+				0B05397C2767BB3A00C364F6 /* LocalNotifications.swift */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				9748321D2766BCF90026910E /* CreateViewModel.swift in Sources */,
 				975E69D827666A9A00C389EE /* UIViewController+Extensions.swift in Sources */,
 				0B914B3F2766C49F00B41565 /* LoginViewModel.swift in Sources */,
+				0B05397D2767BB3A00C364F6 /* LocalNotifications.swift in Sources */,
 				975E69DF27666E6500C389EE /* Account.swift in Sources */,
 				975E69DD27666E2900C389EE /* AccountsStorage.swift in Sources */,
 				97734C7F27664F9800EA0892 /* AppDelegate.swift in Sources */,
