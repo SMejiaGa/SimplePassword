@@ -3,7 +3,7 @@ import Foundation
 enum LoginViewModelState {
     case idle
     case loading
-    case authenticationSuccesful // REVISAR
+    case authenticationSuccessful
     case error(error: Error)
 }
 
@@ -23,14 +23,15 @@ final class LoginViewModel {
         }
     }
     
+    // MARK: - Private functions
     func requestBiometrics() {
         status = .loading
-        // weak self
-        biometrics.askPermissions { bioResult in
+
+        biometrics.askPermissions { [weak self] bioResult in
             if bioResult {
-                self.status = .authenticationSuccesful
+                self?.status = .authenticationSuccessful
             } else {
-                self.status = .error(
+                self?.status = .error(
                     error: LoginViewModelError.biometricsDidFail
                 )
             }

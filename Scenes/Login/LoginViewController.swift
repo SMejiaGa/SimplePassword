@@ -10,7 +10,6 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var continueButton: UIButton!
     
     // MARK: - Properties
-    private let authContext = LAContext()
     private let viewModel: LoginViewModel
     private let errorMessage = "Intentalo nuevamente"
     
@@ -51,7 +50,7 @@ final class LoginViewController: UIViewController {
             case .loading:
                 self?.loaderActivityIndicator.startAnimating()
     
-            case .authenticationSuccesful:
+            case .authenticationSuccessful:
                 self?.navigateToHome()
                 
             case .error(let error):

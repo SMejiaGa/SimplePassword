@@ -1,41 +1,44 @@
 import Foundation
 import LocalAuthentication
 
-enum BiometricType {
-    case none
-    case touch
-    case face
+enum BiometricType: String {
+    case none = ""
+    case touchID = "Touch ID"
+    case faceID = "Face ID"
 }
 
 final class BiometricsHandler {
-    
+    // MARK: - Properties
     private let authContext = LAContext()
-    private let localizedText = " continúa con %@ ID"
+    private let localizedText = " continúa con %@"
     
+    // MARK: - Internal methods
     func biometricType() -> BiometricType {
         if #available(iOS 11, *) {
-            let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-            switch authContext.biometryType {
-            case .none:
-                return .none
-            case .touchID:
-                return .touch
-            case .faceID:
-                return .face
-            @unknown default:
-                fatalError()
-            }
-        } else {
-            return authContext.canEvaluatePolicy(
+            let _ = authContext.canEvaluatePolicy(
                 .deviceOwnerAuthenticationWithBiometrics,
                 error: nil
-            ) ? .touch : .none
+            )
+            
+            switch authContext.biometryType {
+            case .touchID:
+                return .touchID
+            case .faceID:
+                return .faceID
+            default:
+                return .none
+            }
         }
+        
+        return authContext.canEvaluatePolicy(
+            .deviceOwnerAuthenticationWithBiometrics,
+            error: nil
+        ) ? .touchID : .none
     }
     
     func askPermissions(onFinished: @escaping (Bool) -> Void) {
         
-        let formatedText = String(format: localizedText, "\(biometricType())")
+        let formatedText = String(format: localizedText, "\(biometricType().rawValue)")
         let reason = formatedText
         
         authContext.evaluatePolicy(
