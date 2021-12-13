@@ -1,17 +1,13 @@
 import UIKit
-import LocalAuthentication
 
 final class LoginViewController: UIViewController {
     
     // MARK: - IBoutlets
     @IBOutlet private weak var checkAuthView: UIView!
     @IBOutlet private weak var loaderActivityIndicator: UIActivityIndicatorView!
-    @IBOutlet private weak var errorlabel: UILabel!
-    @IBOutlet private weak var continueButton: UIButton!
     
     // MARK: - Properties
     private let viewModel: LoginViewModel
-    private let errorMessage = "Intentalo nuevamente"
     
     // MARK: - IBActions
     @IBAction private func continueButtonAction() {

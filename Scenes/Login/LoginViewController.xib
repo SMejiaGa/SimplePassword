@@ -12,8 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="SimplePassword" customModuleProvider="target">
             <connections>
                 <outlet property="checkAuthView" destination="Qd0-Mm-ki3" id="ad4-KK-ErP"/>
-                <outlet property="continueButton" destination="Yn8-ar-0Mf" id="dPo-Kf-w2H"/>
-                <outlet property="errorlabel" destination="6UF-lC-FJ9" id="Pnv-tA-8ag"/>
                 <outlet property="loaderActivityIndicator" destination="pC8-Se-zeq" id="IKK-D6-wue"/>
                 <outlet property="view" destination="NW0-12-Pp1" id="THP-bw-jc2"/>
             </connections>

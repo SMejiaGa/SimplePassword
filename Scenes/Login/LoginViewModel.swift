@@ -13,7 +13,7 @@ enum LoginViewModelError: Error {
 
 final class LoginViewModel {
     var stateDidChange: ((LoginViewModelState) -> Void)?
-    private let biometrics = BiometricsHandler()
+    private let biometrics: BiometricsHandler
     
     private var status: LoginViewModelState = .idle {
         didSet {
@@ -23,18 +23,25 @@ final class LoginViewModel {
         }
     }
     
+    
+    // MARK: - Class LifeCycle
+    init(biometrics: BiometricsHandler = BiometricsHandler()) {
+        self.biometrics = biometrics
+    }
+    
     // MARK: - Private functions
     func requestBiometrics() {
         status = .loading
 
-        biometrics.askPermissions { [weak self] bioResult in
-            if bioResult {
+        biometrics.askPermissions { [weak self] authSucceded in
+            if authSucceded {
                 self?.status = .authenticationSuccessful
-            } else {
-                self?.status = .error(
-                    error: LoginViewModelError.biometricsDidFail
-                )
+                return
             }
+            
+            self?.status = .error(
+                error: LoginViewModelError.biometricsDidFail
+            )
         }
     }
 }
