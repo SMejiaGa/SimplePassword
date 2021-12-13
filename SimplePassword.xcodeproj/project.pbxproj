@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B914B3F2766C49F00B41565 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B914B3E2766C49F00B41565 /* LoginViewModel.swift */; };
+		0B914B412766C4E500B41565 /* BiometricsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B914B402766C4E500B41565 /* BiometricsHandler.swift */; };
 		971B58AA276650F10015B8D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B58A8276650F10015B8D4 /* LoginViewController.swift */; };
 		971B58AB276650F10015B8D4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B58A9276650F10015B8D4 /* LoginViewController.xib */; };
 		971B58AE276651110015B8D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B58AC276651110015B8D4 /* HomeViewController.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B914B3E2766C49F00B41565 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0B914B402766C4E500B41565 /* BiometricsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricsHandler.swift; sourceTree = "<group>"; };
 		971B58A8276650F10015B8D4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		971B58A9276650F10015B8D4 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		971B58AC276651110015B8D4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 		971B58A5276650C60015B8D4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				0B914B3E2766C49F00B41565 /* LoginViewModel.swift */,
 				971B58A8276650F10015B8D4 /* LoginViewController.swift */,
 				971B58A9276650F10015B8D4 /* LoginViewController.xib */,
 			);
@@ -191,6 +196,7 @@
 		975E69D927666CE400C389EE /* Security */ = {
 			isa = PBXGroup;
 			children = (
+				0B914B402766C4E500B41565 /* BiometricsHandler.swift */,
 				975E69DA27666CF800C389EE /* SecureDataStorage.swift */,
 				975E69DC27666E2900C389EE /* AccountsStorage.swift */,
 				975E69DE27666E6500C389EE /* Account.swift */,
@@ -377,11 +383,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				971B58B2276651250015B8D4 /* CreateViewController.swift in Sources */,
+				0B914B412766C4E500B41565 /* BiometricsHandler.swift in Sources */,
 				971B58AA276650F10015B8D4 /* LoginViewController.swift in Sources */,
 				975E69D227665E5900C389EE /* PasswordTableViewCell.swift in Sources */,
 				975E69C827665DE800C389EE /* HomeTableViewAdapter.swift in Sources */,
 				9748321D2766BCF90026910E /* CreateViewModel.swift in Sources */,
 				975E69D827666A9A00C389EE /* UIViewController+Extensions.swift in Sources */,
+				0B914B3F2766C49F00B41565 /* LoginViewModel.swift in Sources */,
 				975E69DF27666E6500C389EE /* Account.swift in Sources */,
 				975E69DD27666E2900C389EE /* AccountsStorage.swift in Sources */,
 				97734C7F27664F9800EA0892 /* AppDelegate.swift in Sources */,
@@ -558,10 +566,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Commons/Config/SimplePassword.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J75TA62D6V;
+				DEVELOPMENT_TEAM = 7VFT2XCBF2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Commons/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -575,9 +583,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mejiagarcia.simplepassword;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mejiagarcia.simplepassword.monty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "SimplePassword Dev provisioning profile";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -590,10 +598,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Commons/Config/SimplePasswordRelease.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J75TA62D6V;
+				DEVELOPMENT_TEAM = 7VFT2XCBF2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Commons/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -607,9 +615,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mejiagarcia.simplepassword;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mejiagarcia.simplepassword.monty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "SimplePassword Dev provisioning profile";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
