@@ -4,6 +4,7 @@ import UserNotifications
 final class LocalNotifications {
     
     let userNotificationCenter = UNUserNotificationCenter.current()
+    let oneWeekTimeInterval:Double = 604800
     
     func requestNotificationAuthorization() {
         let authOptions = UNAuthorizationOptions.init(arrayLiteral: .alert, .badge, .sound)
@@ -23,7 +24,7 @@ final class LocalNotifications {
         notificationContent.body = body
         notificationContent.badge = NSNumber(value: 1)
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 604800,
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: oneWeekTimeInterval,
                                                         repeats: true)
         let request = UNNotificationRequest(identifier: "SimplePassword",
                                             content: notificationContent,

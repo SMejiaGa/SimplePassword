@@ -9,8 +9,7 @@ final class LoginViewController: UIViewController {
     // MARK: - Properties
     private let viewModel: LoginViewModel
     private let notifications = LocalNotifications()
-    private let notificationTitle = "SimplePassword"
-    private let notificationsBody = "Es buen momento para actualizar tus contraseñas"
+
     
     // MARK: - IBActions
     @IBAction private func continueButtonAction() {
@@ -34,7 +33,7 @@ final class LoginViewController: UIViewController {
         setupView()
         subscribeToViewModel()
         viewModel.requestBiometrics()
-        notifications.sendNotification(title: notificationTitle, body: notificationTitle)
+        notifications.sendNotification(title: Lang.Notification.title, body: Lang.Notification.body)
     }
     
     // MARK: - Private functions

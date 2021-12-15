@@ -10,6 +10,7 @@
 		0B05397D2767BB3A00C364F6 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05397C2767BB3A00C364F6 /* LocalNotifications.swift */; };
 		0B914B3F2766C49F00B41565 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B914B3E2766C49F00B41565 /* LoginViewModel.swift */; };
 		0B914B412766C4E500B41565 /* BiometricsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B914B402766C4E500B41565 /* BiometricsHandler.swift */; };
+		0BAAD91C276A556C006B181F /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAAD91B276A556C006B181F /* Lang.swift */; };
 		971B58AA276650F10015B8D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B58A8276650F10015B8D4 /* LoginViewController.swift */; };
 		971B58AB276650F10015B8D4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B58A9276650F10015B8D4 /* LoginViewController.xib */; };
 		971B58AE276651110015B8D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B58AC276651110015B8D4 /* HomeViewController.swift */; };
@@ -56,6 +57,7 @@
 		0B05397C2767BB3A00C364F6 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		0B914B3E2766C49F00B41565 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0B914B402766C4E500B41565 /* BiometricsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricsHandler.swift; sourceTree = "<group>"; };
+		0BAAD91B276A556C006B181F /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
 		971B58A8276650F10015B8D4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		971B58A9276650F10015B8D4 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		971B58AC276651110015B8D4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				97734C8927664F9A00EA0892 /* LaunchScreen.storyboard */,
 				97734C8727664F9A00EA0892 /* Assets.xcassets */,
 				971B58A4276650B60015B8D4 /* Config */,
+				0BAAD91B276A556C006B181F /* Lang.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				975E69C827665DE800C389EE /* HomeTableViewAdapter.swift in Sources */,
 				9748321D2766BCF90026910E /* CreateViewModel.swift in Sources */,
 				975E69D827666A9A00C389EE /* UIViewController+Extensions.swift in Sources */,
+				0BAAD91C276A556C006B181F /* Lang.swift in Sources */,
 				0B914B3F2766C49F00B41565 /* LoginViewModel.swift in Sources */,
 				0B05397D2767BB3A00C364F6 /* LocalNotifications.swift in Sources */,
 				975E69DF27666E6500C389EE /* Account.swift in Sources */,
