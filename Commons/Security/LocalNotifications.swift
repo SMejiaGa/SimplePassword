@@ -25,7 +25,7 @@ final class LocalNotifications {
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 604800,
                                                         repeats: true)
-        let request = UNNotificationRequest(identifier: "testNotification",
+        let request = UNNotificationRequest(identifier: "SimplePassword",
                                             content: notificationContent,
                                             trigger: trigger)
         
