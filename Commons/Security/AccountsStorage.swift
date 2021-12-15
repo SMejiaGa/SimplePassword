@@ -10,7 +10,9 @@ protocol AccountsStorageProtocol {
 
 final class AccountsStorage: AccountsStorageProtocol {
     // MARK: - Properties
-    private let accountsKey = "Y6AbJzZfM6wFHWU2"
+    private var accountsKey: String {
+        return ProcessInfo.processInfo.environment["STORAGE_KEY"] ?? .init()
+    }
     private let storage: SecureDataStorageProtocol
     
     // MARK: - Life Cycle
