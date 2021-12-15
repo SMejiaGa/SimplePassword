@@ -10,6 +10,7 @@ import UIKit
         window?.rootViewController = LoginViewController(viewModel: LoginViewModel())
         window?.makeKeyAndVisible()
     }
+    
 }
 
 // MARK: - UIResponder, UIApplicationDelegate
@@ -18,6 +19,7 @@ extension AppDelegate: UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        UIApplication.shared.applicationIconBadgeNumber = 0
         setupNavigator()
         return true
     }
