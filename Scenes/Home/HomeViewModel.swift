@@ -53,16 +53,22 @@ final class HomeViewModel: HomeDataSourceProtocol {
         }
         
     }
-    
+    // TODO: refactor
     func showPassword(at indexPath: IndexPath) {
-        biometrics.askPermissions { [weak self] permissionSucceded in
-            guard let self = self else { return }
-            if permissionSucceded {
-                self.dataSource[indexPath.row].passwordVisible.toggle()
-                self.status = .modelUpdated(indexPath: indexPath)
-            } else {
-                self.status = .error(error: HomeViewModelError.error)
+        if self.dataSource[indexPath.row].passwordVisible {
+            self.dataSource[indexPath.row].passwordVisible = false
+            self.status = .modelUpdated(indexPath: indexPath)
+        } else {
+            biometrics.askPermissions { [weak self] permissionSucceded in
+                guard let self = self else { return }
+                if permissionSucceded {
+                    self.dataSource[indexPath.row].passwordVisible.toggle()
+                    self.status = .modelUpdated(indexPath: indexPath)
+                } else {
+                    self.status = .error(error: HomeViewModelError.error)
+                }
             }
+            
         }
     }
     
