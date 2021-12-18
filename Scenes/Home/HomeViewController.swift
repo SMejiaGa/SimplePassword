@@ -28,7 +28,6 @@ final class HomeViewController: UIViewController {
     // MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
         subscribeToViewModel()
         viewModel.fetchData()
@@ -137,6 +136,7 @@ final class HomeViewController: UIViewController {
                 style: .default,
                 handler: { [weak self] _ in
                     self?.viewModel.copyPasswordToClipboard(at: indexPath)
+                    // TODO: change alert to appear when copy to clipboard succed
                     //self?.alert(title: Lang.Home.notice, message: Lang.Home.passwordCopied)
                 }
             )

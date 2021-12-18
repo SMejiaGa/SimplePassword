@@ -21,6 +21,7 @@ enum HomeViewModelError: Error {
 
 final class HomeViewModel: HomeDataSourceProtocol {
     // MARK: - Properties
+    private let searchController = UISearchController(searchResultsController: nil)
     private let storage: AccountsStorageProtocol
     private let biometrics: BiometricsHandler
     private(set) var dataSource = [PasswordCellViewModel]()
@@ -53,7 +54,6 @@ final class HomeViewModel: HomeDataSourceProtocol {
         }
         
     }
-    // TODO: refactor
     func showPassword(at indexPath: IndexPath) {
         if self.dataSource[indexPath.row].passwordVisible {
             self.dataSource[indexPath.row].passwordVisible = false
@@ -62,7 +62,7 @@ final class HomeViewModel: HomeDataSourceProtocol {
             biometrics.askPermissions { [weak self] permissionSucceded in
                 guard let self = self else { return }
                 if permissionSucceded {
-                    self.dataSource[indexPath.row].passwordVisible.toggle()
+                    self.dataSource[indexPath.row].passwordVisible = true
                     self.status = .modelUpdated(indexPath: indexPath)
                 } else {
                     self.status = .error(error: HomeViewModelError.error)
