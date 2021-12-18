@@ -15,34 +15,61 @@ enum HomeViewModelState {
     case modelDeleted(indexPath: IndexPath)
 }
 
+enum HomeViewModelError: Error {
+    case error
+}
+
 final class HomeViewModel: HomeDataSourceProtocol {
     // MARK: - Properties
+    private let searchController = UISearchController(searchResultsController: nil)
     private let storage: AccountsStorageProtocol
+    private let biometrics: BiometricsHandler
     private(set) var dataSource = [PasswordCellViewModel]()
     var stateDidChange: ((HomeViewModelState) -> Void)?
     
     private var status: HomeViewModelState = .idle {
         didSet {
-            mainThread {
+            DispatchQueue.main.async {
                 self.stateDidChange?(self.status)
             }
         }
     }
     
     // MARK: - Life Cycle
-    init(storage: AccountsStorageProtocol) {
+    init(storage: AccountsStorageProtocol, biometrics: BiometricsHandler) {
         self.storage = storage
+        self.biometrics = biometrics
     }
     
     // MARK: - Internal Methods
     func copyPasswordToClipboard(at indexPath: IndexPath) {
-        let password = dataSource[indexPath.row].presentation.password
-        UIPasteboard.general.string = password
+        biometrics.askPermissions { [weak self] permissionSucceded in
+            guard let self = self else { return }
+            if permissionSucceded {
+                let password = self.dataSource[indexPath.row].presentation.password
+                UIPasteboard.general.string = password
+            } else {
+                self.status = .error(error: HomeViewModelError.error)
+            }
+        }
+        
     }
-    
     func showPassword(at indexPath: IndexPath) {
-        dataSource[indexPath.row].passwordVisible.toggle()
-        status = .modelUpdated(indexPath: indexPath)
+        if self.dataSource[indexPath.row].passwordVisible {
+            self.dataSource[indexPath.row].passwordVisible = false
+            self.status = .modelUpdated(indexPath: indexPath)
+        } else {
+            biometrics.askPermissions { [weak self] permissionSucceded in
+                guard let self = self else { return }
+                if permissionSucceded {
+                    self.dataSource[indexPath.row].passwordVisible = true
+                    self.status = .modelUpdated(indexPath: indexPath)
+                } else {
+                    self.status = .error(error: HomeViewModelError.error)
+                }
+            }
+            
+        }
     }
     
     func deletePassword(at indexPath: IndexPath) {
@@ -77,12 +104,6 @@ final class HomeViewModel: HomeDataSourceProtocol {
     }
     
     // MARK: - Private Methods
-    
-    private func mainThread(_ execute: @escaping () -> Void) {
-        DispatchQueue.main.async {
-            execute()
-        }
-    }
     
     private func validateEmptyState() {
         if dataSource.isEmpty {

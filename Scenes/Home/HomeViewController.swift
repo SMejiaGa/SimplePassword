@@ -28,7 +28,6 @@ final class HomeViewController: UIViewController {
     // MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
         subscribeToViewModel()
         viewModel.fetchData()
@@ -42,10 +41,10 @@ final class HomeViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupNavigationBar() {
-        title = .title
+        title = Lang.Home.title
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: .new,
+            title: Lang.Home.new,
             style: .plain,
             target: self,
             action: #selector(navigateToPasswordCreation)
@@ -71,8 +70,8 @@ final class HomeViewController: UIViewController {
     }
     
     private func toggleEmptyState(visible: Bool) {
-        emptyStateLabel.text = visible ? .noAccountsCreated : nil
-        createPasswordButton.setTitle(.createAccountButton, for: .normal)
+        emptyStateLabel.text = visible ? Lang.Home.noAccountsCreated : nil
+        createPasswordButton.setTitle(Lang.Home.createAccountButton, for: .normal)
         
         tableView.isHidden = visible
         createPasswordButton.isHidden = !visible
@@ -93,7 +92,7 @@ final class HomeViewController: UIViewController {
                 self?.tableView.reloadData()
                 
             case .error(let error):
-                self?.alert(title: .error, message: error.localizedDescription)
+                self?.alert(title: Lang.Home.error, message: error.localizedDescription)
                 
             case .noContent:
                 self?.activityIndicatorView?.stopAnimating()
@@ -109,7 +108,7 @@ final class HomeViewController: UIViewController {
     }
     
     private func confirmDeletion(at indexPath: IndexPath) {
-        confirm(message: .confirmDeletion) { [weak self] _ in
+        confirm(message: Lang.Home.confirmDeletion) { [weak self] _ in
             self?.viewModel.deletePassword(at: indexPath)
         }
     }
@@ -117,13 +116,13 @@ final class HomeViewController: UIViewController {
     private func showPasswordMenu(at indexPath: IndexPath) {
         let alertController = UIAlertController(
             title: nil,
-            message: .cellActionMessages,
+            message: Lang.Home.cellActionMessages,
             preferredStyle: .actionSheet
         )
         
         alertController.addAction(
             UIAlertAction(
-                title: .showPassword,
+                title: Lang.Home.showPassword,
                 style: .default,
                 handler: { [weak self] _ in
                     self?.viewModel.showPassword(at: indexPath)
@@ -133,18 +132,19 @@ final class HomeViewController: UIViewController {
         
         alertController.addAction(
             UIAlertAction(
-                title: .copyToClipboard,
+                title: Lang.Home.copyToClipboard,
                 style: .default,
                 handler: { [weak self] _ in
                     self?.viewModel.copyPasswordToClipboard(at: indexPath)
-                    self?.alert(title: .notice, message: .passwordCopied)
+                    // TODO: change alert to appear when copy to clipboard succed
+                    //self?.alert(title: Lang.Home.notice, message: Lang.Home.passwordCopied)
                 }
             )
         )
         
         alertController.addAction(
             UIAlertAction(
-                title: .cancel,
+                title: Lang.Home.cancel,
                 style: .cancel,
                 handler: nil
             )
@@ -177,7 +177,7 @@ extension HomeViewController {
     static var instance: UINavigationController {
         UINavigationController(
             rootViewController: HomeViewController(
-                viewModel: HomeViewModel(storage: AccountsStorage())
+                viewModel: HomeViewModel(storage: AccountsStorage(), biometrics: BiometricsHandler())
             )
         )
     }
@@ -188,20 +188,4 @@ extension HomeViewController: CreateViewControllerDelegate {
     func passwordCreated() {
         viewModel.fetchData()
     }
-}
-
-private extension String {
-    static let new = "Crear nueva"
-    static let error = "Error"
-    static let cancel = "Cancelar"
-    static let delete = "Eliminar"
-    static let notice = "Importante"
-    static let title = "Contraseñas"
-    static let showPassword = "Mostrar/Ocultar contraseña"
-    static let copyToClipboard = "Copiar al portapapeles"
-    static let cellActionMessages = "¿Qué deseas hacer?"
-    static let createAccountButton = "Crear primera contraseña"
-    static let passwordCopied = "Contraseña copiada al portapapeles."
-    static let noAccountsCreated = "Aún no has creado ninguna contraseña."
-    static let confirmDeletion = "¿Realmente deseas eliminar esa contraseña?"
 }
